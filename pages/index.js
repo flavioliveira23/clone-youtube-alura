@@ -48,12 +48,17 @@ const SyledHeader = styled.div`
     gap: 16px;
   }
 `;
+const StyledBanner = styled.div`
+  background-color: blue;
+  background-image: url(${({ banner }) => banner});
+  height: 230px;
+`;
 
 function Header() {
   return (
     <SyledHeader>
+      <StyledBanner banner={config.banner} />
       <section className="user-info">
-        <img className="banner-photo" src={config.banner} />
         <img className="perfil-photo" src={`https://github.com/${config.github}.png`} />
         <div>
           <h2>
