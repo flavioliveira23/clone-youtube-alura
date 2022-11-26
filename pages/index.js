@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import { CONFIG_FILES } from "next/dist/shared/lib/constants";
 
 function HomePage() {
   return (
@@ -28,11 +29,16 @@ export default HomePage;
 
 
 const SyledHeader = styled.div`
-  img {
+  .perfil-photo {
     width: 80px;
     height: 80px;
     border-radius: 50%;
   }
+
+  .banner-photo {
+
+  }
+
   .user-info {
     margin-top: 50px;
     display: flex;
@@ -42,11 +48,13 @@ const SyledHeader = styled.div`
     gap: 16px;
   }
 `;
+
 function Header() {
   return (
     <SyledHeader>
       <section className="user-info">
-        <img src={`https://github.com/${config.github}.png`} />
+        <img className="banner-photo" src={config.banner} />
+        <img className="perfil-photo" src={`https://github.com/${config.github}.png`} />
         <div>
           <h2>
             {config.name}
