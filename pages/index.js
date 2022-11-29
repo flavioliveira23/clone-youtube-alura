@@ -51,6 +51,7 @@ const SyledHeader = styled.div`
 const StyledBanner = styled.div`
   background-color: blue;
   background-image: url(${({ banner }) => banner});
+  /* ou background-image: url(${config.banner}); */
   height: 230px;
 `;
 
