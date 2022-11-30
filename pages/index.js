@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
-import { CONFIG_FILES } from "next/dist/shared/lib/constants";
 
 function HomePage() {
   return (
@@ -53,11 +52,6 @@ const SyledHeader = styled.div`
     gap: 16px;
   }
 `;
-const StyledBanner = styled.div`
-  background-color: blue;
-  background-image: url(${({ banner }) => banner});
-  height: 230px;
-`;
 
 const StyledBanner = styled.div`
   background-color: blue;
@@ -72,7 +66,7 @@ function Header() {
       <StyledBanner banner={config.banner} />
       <StyledBanner banner={config.banner} />
       <section className="user-info">
-        <img className="perfil-photo" className="perfil-photo" src={`https://github.com/${config.github}.png`} />
+        <img className="perfil-photo"  src={`https://github.com/${config.github}.png`} />
         <div>
           <h2>
             {config.name}
