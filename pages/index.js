@@ -1,7 +1,7 @@
 import config from "../config.json";
 import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
-import Menu from "../src/components/Menu";
+import Menu from "../src/components/Menu/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import { CONFIG_FILES } from "next/dist/shared/lib/constants";
 
@@ -39,6 +39,11 @@ const SyledHeader = styled.div`
 
   }
 
+
+  .banner-photo {
+
+  }
+
   .user-info {
     margin-top: 50px;
     display: flex;
@@ -51,6 +56,12 @@ const SyledHeader = styled.div`
 const StyledBanner = styled.div`
   background-color: blue;
   background-image: url(${({ banner }) => banner});
+  height: 230px;
+`;
+
+const StyledBanner = styled.div`
+  background-color: blue;
+  background-image: url(${({ banner }) => banner});
   /* ou background-image: url(${config.banner}); */
   height: 230px;
 `;
@@ -59,8 +70,9 @@ function Header() {
   return (
     <SyledHeader>
       <StyledBanner banner={config.banner} />
+      <StyledBanner banner={config.banner} />
       <section className="user-info">
-        <img className="perfil-photo" src={`https://github.com/${config.github}.png`} />
+        <img className="perfil-photo" className="perfil-photo" src={`https://github.com/${config.github}.png`} />
         <div>
           <h2>
             {config.name}
