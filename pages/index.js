@@ -1,7 +1,7 @@
 import config from "../config.json";
 import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
-import Menu from "../src/components/Menu";
+import Menu from "../src/components/Menu/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
 function HomePage() {
@@ -28,11 +28,16 @@ export default HomePage;
 
 
 const SyledHeader = styled.div`
-  img {
+  .perfil-photo {
     width: 80px;
     height: 80px;
     border-radius: 50%;
   }
+
+  .banner-photo {
+
+  }
+
   .user-info {
     margin-top: 50px;
     display: flex;
@@ -42,11 +47,18 @@ const SyledHeader = styled.div`
     gap: 16px;
   }
 `;
+const StyledBanner = styled.div`
+  background-color: blue;
+  background-image: url(${({ banner }) => banner});
+  height: 230px;
+`;
+
 function Header() {
   return (
     <SyledHeader>
+      <StyledBanner banner={config.banner} />
       <section className="user-info">
-        <img src={`https://github.com/${config.github}.png`} />
+        <img className="perfil-photo" src={`https://github.com/${config.github}.png`} />
         <div>
           <h2>
             {config.name}
