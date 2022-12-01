@@ -39,7 +39,7 @@ export default function Search() {
 
     return (
         <StyledSearch>
-            <input type="text" />
+            <input type="text"  />
             <button>
                 🔎
             </button>
